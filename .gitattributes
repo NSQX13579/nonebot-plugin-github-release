@@ -1,0 +1,6 @@
+# 服务器是 Linux，统一用 LF，避免 CRLF 混进部署目录
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary

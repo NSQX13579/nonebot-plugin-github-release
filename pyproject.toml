@@ -1,0 +1,66 @@
+[project]
+name = "nonebot-plugin-github-release"
+version = "0.1.0"
+description = "监控任意 GitHub 仓库的 release，把新版本推送到 QQ 群"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+    { name = "ns", email = "102937666+NSQX13579@users.noreply.github.com" },
+]
+keywords = ["nonebot", "nonebot2", "github", "release", "watch"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "nonebot2>=2.4.0",
+    "nonebot-adapter-onebot>=2.4.0",
+    "nonebot-plugin-apscheduler>=0.5.0",
+    "nonebot-plugin-localstore>=0.7.0",
+    "httpx>=0.26",
+    "pydantic>=2.0",
+    # Windows 上没有系统 tzdata，缺了它 ZoneInfo("Asia/Shanghai") 会失效
+    "tzdata; sys_platform == 'win32'",
+]
+
+[project.urls]
+Homepage = "https://github.com/NSQX13579/nonebot-plugin-github-release"
+Repository = "https://github.com/NSQX13579/nonebot-plugin-github-release"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+]
+# 卡片图片功能所需（不装会自动回退成纯文本推送）
+image = [
+    "nonebot-plugin-htmlrender>=0.6.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["nonebot_plugin_github_release"]
+
+[tool.nonebot]
+name = "GitHub 发布推送"
+module_name = "nonebot_plugin_github_release"
+description = "监控任意 GitHub 仓库的 release，把新版本推送到 QQ 群"
+usage = """
+/gh订阅 owner/repo    本群订阅某个仓库（群管）
+/gh退订 owner/repo    取消订阅（群管）
+/gh列表               看本群订阅了哪些
+/gh公告 owner/repo    看最新 release 全文
+/gh状态               推送状态
+/gh检查               立刻检查一次（超管）
+"""
+homepage = "https://github.com/NSQX13579/nonebot-plugin-github-release"
+supported_adapters = ["~onebot.v11"]
+version = "0.1.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
