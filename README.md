@@ -18,7 +18,7 @@ playwright install chromium        # 卡片图片需要，不装会自动回退�
 `.env`（完整模板见 `.env.example`）：
 
 ```dotenv
-# 监控哪些仓库（留空也行，直接在群里 /gh订阅 更灵活）
+# 监控哪些仓库（留空也行，直接在群里 /gh订阅）
 GH_WATCH_REPOS=[]
 GH_WATCH_GROUPS=[]
 
@@ -45,7 +45,7 @@ GH_WATCH_GITHUB_TOKEN=
 
 ![示例](docs/card-example.png)
 
-图下面另附一行带链接的文字——图片里的地址点不了。卡片上的头像、发布时间、版本号、正文、表情计数都是 GitHub 的真实数据。
+图下面另附一行带链接的文字。
 
 **渲染出任何问题都会回退纯文本**（没装 htmlrender、没装 chromium、超时都算），只打一条警告日志，推送不受影响。
 
