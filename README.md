@@ -18,14 +18,15 @@ playwright install chromium        # 卡片图片需要，不装会自动回退�
 `.env`（完整模板见 `.env.example`）：
 
 ```dotenv
-GH_WATCH_REPOS=["owner/repo"]
-GH_WATCH_GROUPS=[123456789]
+# 监控哪些仓库（留空也行，直接在群里 /gh订阅 更灵活）
+GH_WATCH_REPOS=[]
+GH_WATCH_GROUPS=[]
 
 # 可选：匿名 API 限额 60 次/小时且按出口 IP 共享，多仓库建议配上
 GH_WATCH_GITHUB_TOKEN=
 ```
 
-临时加仓库不用改配置，群里发 `/gh订阅 owner/repo` 就行。
+插件不带任何默认仓库——用群里的 `/gh订阅 owner/repo` 加，或者把上面的列表填上。
 
 ## 指令
 

@@ -32,7 +32,7 @@ def _load_without_nonebot() -> None:
 
 async def main() -> int:
     parser = argparse.ArgumentParser(description="预览 release 的文本渲染效果")
-    parser.add_argument("--repo", default="deepseek-ai/deepseek-harness")
+    parser.add_argument("--repo", required=True, help="owner/repo")
     parser.add_argument("--tag", default="")
     parser.add_argument("--list", type=int, default=0, metavar="N", help="列最近 N 条")
     parser.add_argument("--max-chars", type=int, default=600)

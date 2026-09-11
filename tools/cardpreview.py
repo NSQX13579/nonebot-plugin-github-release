@@ -45,7 +45,7 @@ def fixture_release(repo: str) -> Release:
 
 async def main() -> int:
     parser = argparse.ArgumentParser(description="渲染 release 卡片预览")
-    parser.add_argument("--repo", default="deepseek-ai/deepseek-harness")
+    parser.add_argument("--repo", required=True, help="owner/repo")
     parser.add_argument("--tag", default="")
     parser.add_argument("--fixture", action="store_true", help="用样例正文，不联网")
     parser.add_argument("--width", type=int, default=900)

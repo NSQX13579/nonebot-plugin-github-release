@@ -117,7 +117,7 @@ async def _handle_subscribe(bot: Bot, event: MessageEvent, args: Message = Comma
 
     repo = _parse_repo(args.extract_plain_text())
     if repo is None:
-        await subscribe_cmd.finish("用法：/gh订阅 owner/repo（例如 /gh订阅 deepseek-ai/deepseek-harness）")
+        await subscribe_cmd.finish("用法：/gh订阅 owner/repo")
 
     cfg = load_config()
     path = subscriptions_path(resolve_data_dir(cfg))
