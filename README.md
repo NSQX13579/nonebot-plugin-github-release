@@ -2,6 +2,8 @@
 
 监控任意 GitHub 仓库的 release，把新版本推送到 QQ 群。按群订阅，每个群只收自己关心的仓库。
 
+这个插件是从 [nonebot-plugin-dsh-release](https://github.com/NSQX13579/nonebot-plugin-dsh-release) 泛化出来的：去掉写死的仓库，改成可配置的仓库列表 + 按群订阅，其余（双数据源、卡片图、幂等）沿用。
+
 ## 安装
 
 ```bash
