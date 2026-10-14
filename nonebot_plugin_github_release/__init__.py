@@ -12,10 +12,12 @@ from datetime import datetime, timedelta
 from nonebot import require
 
 require("nonebot_plugin_apscheduler")
+require("nonebot_plugin_localstore")
 
 from nonebot.log import logger  # noqa: E402
 from nonebot.plugin import PluginMetadata  # noqa: E402
 from nonebot_plugin_apscheduler import scheduler  # noqa: E402
+import nonebot_plugin_localstore  # noqa: E402,F401  数据目录用它，见 store.resolve_data_dir
 
 from . import commands as _commands  # noqa: E402,F401
 from .config import Config, load_config  # noqa: E402

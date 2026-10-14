@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-github-release"
-version = "0.1.0"
+version = "0.1.1"
 description = "监控任意 GitHub 仓库的 release，把新版本推送到 QQ 群"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -59,7 +59,7 @@ usage = """
 """
 homepage = "https://github.com/NSQX13579/nonebot-plugin-github-release"
 supported_adapters = ["~onebot.v11"]
-version = "0.1.0"
+version = "0.1.1"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -17,7 +17,12 @@ from .config import Config
 
 
 def resolve_data_dir(cfg: Config) -> Path:
-    """插件数据目录：优先用 nonebot-plugin-localstore，退化为 data/<插件名>。"""
+    """插件数据目录。
+
+    用 nonebot-plugin-localstore 管（依赖已在 ``__init__.py`` 里 require）。
+    这里按需导入，是为了让单测和 tools 脚本在没有 NoneBot 运行时的情况下也能跑；
+    真正缺 localstore 时退化为 data/github_release，不至于把插件带崩。
+    """
     if cfg.gh_watch_data_dir:
         return Path(cfg.gh_watch_data_dir).expanduser()
     try:
