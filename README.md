@@ -17,7 +17,7 @@
 
 ## 📖 介绍
 
-按群订阅，每个群只收自己关心的仓库；有新 release 就推一张类 GitHub 的卡片图，渲染失败自动回退纯文本。
+按群订阅，有新 release 就推一张类 GitHub 的卡片图，渲染失败自动回退纯文本。
 
 本插件由 [nonebot-plugin-dsh-release](https://github.com/NSQX13579/nonebot-plugin-dsh-release) 改进而得。
 
