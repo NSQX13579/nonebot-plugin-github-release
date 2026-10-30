@@ -1,19 +1,45 @@
-# GitHub 发布推送
+<div align="center">
+  <a href="https://v2.nonebot.dev/store">
+    <img src="https://raw.githubusercontent.com/fllesser/nonebot-plugin-template/refs/heads/resource/.docs/NoneBotPlugin.svg" width="310" alt="logo">
+  </a>
 
-监控任意 GitHub 仓库的 release，把新版本推送到 QQ 群。按群订阅，每个群只收自己关心的仓库。
+## ✨ GitHub 发布推送 ✨
+
+监控任意 GitHub 仓库的 release，把新版本推送到 QQ 群
+
+<p>
+  <img src="https://img.shields.io/badge/python-3.9+-blue?style=flat-square&logo=python&logoColor=white" alt="python">
+  <img src="https://img.shields.io/badge/nonebot-2.4+-red?style=flat-square" alt="nonebot">
+  <img src="https://img.shields.io/pypi/v/nonebot-plugin-github-release?style=flat-square" alt="pypi">
+  <img src="https://img.shields.io/github/license/NSQX13579/nonebot-plugin-github-release?style=flat-square" alt="license">
+</p>
+</div>
+
+## 📖 介绍
+
+按群订阅，每个群只收自己关心的仓库；有新 release 就推一张类 GitHub 的卡片图，渲染失败自动回退纯文本。
 
 本插件由 [nonebot-plugin-dsh-release](https://github.com/NSQX13579/nonebot-plugin-dsh-release) 改进而得。
 
-## 安装
+### 📷 效果图
+
+<details>
+<summary>点击展开</summary>
+
+![示例](https://raw.githubusercontent.com/NSQX13579/nonebot-plugin-github-release/main/docs/card-example.png)
+
+</details>
+
+## 💿 安装
 
 ```bash
 pip install nonebot-plugin-github-release
 playwright install chromium        # 卡片图片需要，不装会自动回退纯文本
 ```
 
-依赖 `nonebot-plugin-apscheduler`（定时）和 `nonebot-plugin-localstore`（数据目录），装包时会一并带上。
+依赖 `nonebot-plugin-apscheduler` 与 `nonebot-plugin-localstore`，装包时一并带上。
 
-## 配置
+## ⚙️ 配置
 
 `.env`（完整模板见 `.env.example`）：
 
@@ -26,9 +52,9 @@ GH_WATCH_GROUPS=[]
 GH_WATCH_GITHUB_TOKEN=
 ```
 
-插件不带任何默认仓库——用群里的 `/gh订阅 owner/repo` 加，或者把上面的列表填上。
+插件不带任何默认仓库，用群里的 `/gh订阅 owner/repo` 加。
 
-## 指令
+## 🎉 使用
 
 | 指令 | 权限 | 说明 |
 | --- | --- | --- |
@@ -41,15 +67,7 @@ GH_WATCH_GITHUB_TOKEN=
 | `/gh状态` | 所有人 | 推送状态 |
 | `/gh检查` | 超管 | 立刻检查一次，不等下一轮 |
 
-## 消息长什么样
-
-![示例](docs/card-example.png)
-
-图下面另附一行带链接的文字。
-
-**渲染出任何问题都会回退纯文本**（没装 htmlrender、没装 chromium、超时都算），只打一条警告日志，推送不受影响。
-
-## 行为说明
+### 说明
 
 - 数据源：Releases API 为主，被限流时自动切到不限流的 `releases.atom`
 - 首次运行只建推送基线，不会把历史 release 刷进群
@@ -57,6 +75,6 @@ GH_WATCH_GITHUB_TOKEN=
 - 中英双语正文默认只保留中文段，`GH_WATCH_BODY_LANGUAGE=all` 可改成两段都留
 - `GH_WATCH_INCLUDE_PRERELEASE=False` 则只推正式版
 
-## License
+## 📄 License
 
 MIT
